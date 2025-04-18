@@ -7,17 +7,17 @@ const userRepository = getRepository(User);
 
 export const createUser: RequestHandler = async (req, res) => {
   try {
-    const { nome, localizacao, areaDeInteresse } = req.body as CreateUserRequestBody;
+    const { name, location, areaOfInterest } = req.body as CreateUserRequestBody;
 
-    if (!nome || !localizacao || !areaDeInteresse) {
+    if (!name || !location || !areaOfInterest) {
       res.status(400).json({ message: 'Campos obrigatórios ausentes.' });
       return;
     }
 
     const newUser = await userRepository.create({
-      nome,
-      localizacao,
-      areaDeInteresse,
+      name,
+      location,
+      areaOfInterest,
     });
 
     res.status(201).json({ 

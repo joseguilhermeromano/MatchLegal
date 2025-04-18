@@ -28,18 +28,18 @@ const router = Router();
  *               - localizacao
  *               - areaDeInteresse
  *             properties:
- *               nome:
+ *               name:
  *                 type: string
  *                 description: Nome completo do usuário
- *                 example: João Silva
- *               localizacao:
+ *                 example: José Romano
+ *               location:
  *                 type: string
  *                 description: Localização geográfica
- *                 example: São Paulo, Brasil
- *               areaDeInteresse:
+ *                 example: Guarulhos, São Paulo, Brasil
+ *               areaOfInterest:
  *                 type: string
  *                 description: Área de interesse profissional
- *                 example: Direito Tributário
+ *                 example: Tecnologia
  *     responses:
  *       201:
  *         description: Usuário criado com sucesso
@@ -51,17 +51,17 @@ const router = Router();
  *                 id:
  *                   type: string
  *                   description: ID do usuário criado
- *                 nome:
+ *                 name:
  *                   type: string
- *                 localizacao:
+ *                 location:
  *                   type: string
- *                 areaDeInteresse:
+ *                 areaOfInterest:
  *                   type: string
  *       400:
  *         description: Dados inválidos
  *       500:
  *         description: Erro no servidor
  */
-router.post('/usuarios', createUser as RequestHandler);
+router.post('/users', createUser as RequestHandler);
 
 export default router;

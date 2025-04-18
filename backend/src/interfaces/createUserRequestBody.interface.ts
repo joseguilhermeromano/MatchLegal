@@ -1,5 +1,5 @@
 export interface CreateUserRequestBody {
-    nome: string;
-    localizacao: string;
-    areaDeInteresse: string;
+    name: string;
+    location: string;
+    areaOfInterest: string;
 }
