@@ -3,6 +3,7 @@ import "reflect-metadata";
 import express, { Express, Request, Response } from 'express';
 import { swaggerUi, swaggerSpec } from "./config/swagger.js";
 import assistantRoutes from './routes/assistant.routes.js';
+import cors from 'cors'
 
 const app: Express = express();
 
@@ -17,6 +18,13 @@ async function startServer(): Promise<void> {
     // 2. Configure Express middleware
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
+
+    // Habilita CORS
+    app.use(cors({
+      origin: '*',
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+      allowedHeaders: ['Content-Type', 'Authorization']
+    }));
 
     // 3. Basic route
     app.get('/', (_: Request, res: Response): void => {
