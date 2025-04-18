@@ -26,4 +26,17 @@ export class UserController {
       });
     }
   };
+
+  /**
+  * Obtém todos os usuários com opções de paginação e filtro
+  */
+  getAllUsers: RequestHandler = async (_, res) => {
+    try {
+      const users = await this.userService.getAllUsers();
+      res.status(200).json(users);
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Erro desconhecido';
+      res.status(500).json({ message: 'Erro ao buscar usuários', error: errorMessage });
+    }
+  };
 }

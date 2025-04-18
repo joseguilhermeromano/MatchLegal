@@ -65,4 +65,38 @@ const userController = new UserController();
  */
 router.post('/users', userController.createUser);
 
+/**
+ * @swagger
+ * /api/users:
+ *   get:
+ *     summary: Lista todos os usuários
+ *     description: Retorna uma lista com todos os usuários cadastrados
+ *     tags: [Usuários]
+ *     responses:
+ *       200:
+ *         description: Lista de usuários retornada com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: string
+ *                     description: ID do usuário
+ *                   name:
+ *                     type: string
+ *                     description: Nome do usuário
+ *                   location:
+ *                     type: string
+ *                     description: Localização do usuário
+ *                   areaOfInterest:
+ *                     type: string
+ *                     description: Área de interesse do usuário
+ *       500:
+ *         description: Erro no servidor
+ */
+router.get('/users', userController.getAllUsers);
+
 export default router;
