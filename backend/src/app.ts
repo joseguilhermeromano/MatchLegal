@@ -1,6 +1,6 @@
+import { initFireORM } from './config/fireorm.js';
 import "reflect-metadata";
 import express, { Express, Request, Response } from 'express';
-import { initFireORM } from './config/fireorm.js';
 import { swaggerUi, swaggerSpec } from "./config/swagger.js";
 import assistantRoutes from './routes/assistant.routes.js';
 
@@ -20,7 +20,7 @@ async function startServer(): Promise<void> {
 
     // 3. Basic route
     app.get('/', (_: Request, res: Response): void => {
-      res.send('🚀 API está funcionando!');
+      res.send('Olá, seja bem-vindo ao MatchLegal AI API 🚀🚀🚀 ...inicializada com sucesso...');
     });
 
     // 4. API routes

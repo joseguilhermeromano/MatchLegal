@@ -1,7 +1,8 @@
-import { RequestHandler, Router } from 'express';
-import { createUser } from '../controllers/user.controller.js';
+import { Router } from 'express';
+import { UserController } from '../controllers/user.controller.js';
 
 const router = Router();
+const userController = new UserController();
 
 /**
  * @swagger
@@ -62,6 +63,6 @@ const router = Router();
  *       500:
  *         description: Erro no servidor
  */
-router.post('/users', createUser as RequestHandler);
+router.post('/users', userController.createUser);
 
 export default router;
