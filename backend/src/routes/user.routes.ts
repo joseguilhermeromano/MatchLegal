@@ -12,7 +12,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/usuarios:
+ * /api/users:
  *   post:
  *     summary: Cria um novo usuário
  *     description: Registra um novo usuário no sistema
