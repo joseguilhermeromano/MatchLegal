@@ -5,17 +5,18 @@ const options: swaggerJSDoc.Options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'MatchLegal API REST',
+      title: 'MatchLegal AI API REST',
       version: '1.0.0',
       description: 'Documentação com Swagger',
     },
     servers: [
       {
-        url: 'http://localhost:3000',
+        url: 'http://localhost:3000/api',
+        description: "MatchLegal AI API"
       },
     ],
   },
-  apis: ['src/routes/*.ts'],
+  apis: ['src/routes/*.routes.ts', './src/controllers/*.controller.js'],
 };
 
 const swaggerSpec = swaggerJSDoc(options);

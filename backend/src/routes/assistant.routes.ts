@@ -4,19 +4,82 @@ import { handleAssistantMessage, getConversationHistory } from '../controllers/a
 const router = Router();
 
 /**
- * @route POST /assistant
- * @desc Envia mensagem para o assistente virtual
- * @access Public
- * @param {string} sessionId
- * @param {string} message
+ * @swagger
+ * /api/assistant:
+ *   post:
+ *     summary: Envia mensagem para o assistente virtual
+ *     description: Processa uma mensagem do usuário e retorna a resposta do assistente
+ *     tags: [Assistant]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               sessionId:
+ *                 type: string
+ *                 description: ID da sessão
+ *               message:
+ *                 type: string
+ *                 description: Mensagem do usuário
+ *             example:
+ *               sessionId: "AAAAMMDDHHMMSS"
+ *               message: "Olá"
+ *     responses:
+ *       200:
+ *         description: Resposta do assistente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 response:
+ *                   type: string
  */
 router.post('/assistant', handleAssistantMessage);
 
 /**
- * @route GET /assistant/:sessionId
- * @desc Retorna o histórico de conversa
- * @access Public
- * @param {string} sessionId - ID da sessão para recuperar o histórico de mensagens
+ * @swagger
+ * /api/assistant/{sessionId}:
+ *   get:
+ *     summary: Retorna o histórico de conversa
+ *     description: Retorna todas as mensagens trocadas em uma sessão específica
+ *     tags: [Assistant]
+ *     parameters:
+ *       - in: path
+ *         name: sessionId
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: ID da sessão
+ *     responses:
+ *       200:
+ *         description: Histórico de conversação
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 messages:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       from:
+ *                         type: string
+ *                         example: "user"
+ *                       text:
+ *                         type: string
+ *                         example: "Olá"
+ *                       timestamp:
+ *                         type: string
+ *                         format: date-time
+ *                         example: "2023-08-01T12:00:00Z"
+ *       404:
+ *         description: Sessão não encontrada
+ *       500:
+ *         description: Erro no servidor
  */
 router.get('/assistant/:sessionId', getConversationHistory as RequestHandler);
 
