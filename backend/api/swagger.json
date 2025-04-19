@@ -1,0 +1,251 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "MatchLegal AI API REST",
+    "version": "1.0.0",
+    "description": "Documentação com Swagger"
+  },
+  "servers": [
+    {
+      "url": "https://match-legal-api.vercel.app",
+      "description": "MatchLegal AI API"
+    }
+  ],
+  "paths": {
+    "/api/assistant": {
+      "post": {
+        "summary": "Envia mensagem para o assistente virtual",
+        "description": "Processa uma mensagem do usuário e retorna a resposta do assistente",
+        "tags": [
+          "Assistant"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sessionId": {
+                    "type": "string",
+                    "description": "ID da sessão"
+                  },
+                  "message": {
+                    "type": "string",
+                    "description": "Mensagem do usuário"
+                  }
+                },
+                "example": {
+                  "sessionId": "AAAAMMDDHHMMSS",
+                  "message": "Olá"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Resposta do assistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "response": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/assistant/{sessionId}": {
+      "get": {
+        "summary": "Retorna o histórico de conversa",
+        "description": "Retorna todas as mensagens trocadas em uma sessão específica",
+        "tags": [
+          "Assistant"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "sessionId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "ID da sessão"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Histórico de conversação",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "messages": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "from": {
+                            "type": "string",
+                            "example": "user"
+                          },
+                          "text": {
+                            "type": "string",
+                            "example": "Olá"
+                          },
+                          "timestamp": {
+                            "type": "string",
+                            "format": "date-time",
+                            "example": "2023-08-01T12:00:00Z"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Sessão não encontrada"
+          },
+          "500": {
+            "description": "Erro no servidor"
+          }
+        }
+      }
+    },
+    "/api/users": {
+      "post": {
+        "summary": "Cria um novo usuário",
+        "description": "Registra um novo usuário no sistema",
+        "tags": [
+          "Usuários"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "nome",
+                  "localizacao",
+                  "areaDeInteresse"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Nome completo do usuário",
+                    "example": "José Romano"
+                  },
+                  "location": {
+                    "type": "string",
+                    "description": "Localização geográfica",
+                    "example": "Guarulhos, São Paulo, Brasil"
+                  },
+                  "areaOfInterest": {
+                    "type": "string",
+                    "description": "Área de interesse profissional",
+                    "example": "Tecnologia"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Usuário criado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "ID do usuário criado"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "location": {
+                      "type": "string"
+                    },
+                    "areaOfInterest": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos"
+          },
+          "500": {
+            "description": "Erro no servidor"
+          }
+        }
+      },
+      "get": {
+        "summary": "Lista todos os usuários",
+        "description": "Retorna uma lista com todos os usuários cadastrados",
+        "tags": [
+          "Usuários"
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de usuários retornada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "ID do usuário"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Nome do usuário"
+                      },
+                      "location": {
+                        "type": "string",
+                        "description": "Localização do usuário"
+                      },
+                      "areaOfInterest": {
+                        "type": "string",
+                        "description": "Área de interesse do usuário"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro no servidor"
+          }
+        }
+      }
+    }
+  },
+  "components": {},
+  "tags": [
+    {
+      "name": "Usuários",
+      "description": "Gerenciamento de usuários"
+    }
+  ]
+}

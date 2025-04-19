@@ -18,6 +18,11 @@
     "noImplicitAny": false,
     "noImplicitThis": false,
     "strictNullChecks": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
-  "include": ["src", "__tests__"]
+  "include": ["src", "api", "__tests__"]
 }

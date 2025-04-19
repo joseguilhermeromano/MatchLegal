@@ -15,7 +15,7 @@ enum ConversationStep {
   }
 
 const MESSAGES = {
-  WELCOME: 'Olá! Seja-bem vindo!! \nSou o <b>Leo</b>, e minha missão é ajudar você a encontrar a conexão ideal. \n\nO que deseja fazer?\n\n1 - Cadastrar\n2 - Buscar Conexões',
+  WELCOME: 'Olá! Seja-bem vindo!! \nSou o Leo, e minha missão é ajudar você a encontrar a conexão ideal. \n\nO que deseja fazer?\n\n1 - Cadastrar\n2 - Buscar Conexões',
   INVALID_OPTION: 'Opção inválida. Digite 1 ou 2.',
   ASK_NAME: 'Qual o nome da pessoa? (ex: José Romano)',
   ASK_LOCATION: 'Qual a localização da pessoa? (digitar assim: São Paulo, SP, Brasil)',
