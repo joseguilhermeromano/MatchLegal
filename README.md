@@ -12,13 +12,35 @@ O Banco de dados está hospedado online no Firebase - Firestore.
 
 ---
 
+## 🚀O que foi utilizado?
+
+1. **Backend**
+   - [Node.js](https://nodejs.org/) (versão recomendada: 18.x ou superior, eu utilizei v22.13.1)
+   - [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
+   - [Firebase](https://firebase.google.com/)
+   - [Firestore](https://firebase.google.com/docs/firestore)
+   - [Swagger](https://swagger.io/)
+   - [TypeScript](https://www.typescriptlang.org/)
+   - [Jest](https://jestjs.io/)
+   - [ESLint](https://eslint.org/)
+   - [Express](https://expressjs.com/)
+   - [Axios](https://axios-http.com/)
+   - [Firebase Admin](https://firebase.google.com/docs/admin)
+
+2. **Frontend**
+   - [React](https://reactjs.org/)
+   - [Vite](https://vitejs.dev/)
+   - [MUI](https://mui.com/)
+   - [React Router](https://reactrouter.com/)
+   - [React Query](https://tanstack.com/query/v4)
+
 ## 🚀 Como rodar o projeto localmente
 
 ### 🔧 Pré-requisitos
 
 Certifique-se de ter instalado:
 
-- [Node.js](https://nodejs.org/) (versão recomendada: 18.x ou superior)
+- [Node.js](https://nodejs.org/) (versão recomendada: 18.x ou superior, eu utilizei v22.13.1)
 - [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
 
 ---
