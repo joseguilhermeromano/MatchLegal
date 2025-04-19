@@ -132,4 +132,21 @@ Basta seguir os passos exibidos na tela e escrever as mensagens conforme solicit
 ![Screenshot 14](prints/Screenshot_14.png)
 ![Screenshot 15](prints/Screenshot_15.png)
 
+### 📚 Principais decisões tomadas durante o desenvolvimento
+
+1. Procurei criar uma interface simples em React com Material UI para simular uma assistente virtual de IA. 
+2. Integrei o projeto com o banco de dados NOSQL do firebase. 
+3. criei um algoritmo simples para calcular o match de até 3 usuários mais próximos. 
+4. Procurei usar recursos totalmente próprios, sem recorrer a IAs externas. 
+5. Além disso, documentei toda a API com Swagger. 
+
+### 📚 O que você faria diferente se tivesse mais tempo?
+
+1. Eu iria aprimorar as respostas da IA, para que elas fossem mais naturais e humanas.
+2. Eu iria criar uma autenticação para os usuários, para que pudesse salvar suas preferências e matches.
+3. Eu iria criar testes unitários para as principais funcionalidades da API.
+4. Eu iria aprimorar o layout para deixar mais profissional. 
+5. Eu iria impelmentar outros cadastros com o assistente, como empresas, eventos, etc.
+
+
 
