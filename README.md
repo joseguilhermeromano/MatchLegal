@@ -1,4 +1,4 @@
-# MatchLegal
+# 🎯 MatchLegal
 
 Este é o repositório do projeto **MatchLegal**, que consiste em uma aplicação com **backend em Node.js** e **frontend em React**.
 O projeto simula uma Inteligência Artificial (Assistente) para cadastrar conexões e avaliar matches. 
@@ -92,5 +92,21 @@ VITE_API_BASE_URL= http://localhost:3000/api
 Com o frontend e o backend rodando simultaneamente, já é possível utilizar a aplicação. 
 Basta seguir os passos exibidos na tela e escrever as mensagens conforme solicitado.
 
+### 📚 Segue os prints da aplicação funcionando no VERCEL
+
+![Screenshot 1](prints/Screenshot_1.png)  
+![Screenshot 2](prints/Screenshot_2.png)  
+![Screenshot 3](prints/Screenshot_3.png)  
+![Screenshot 4](prints/Screenshot_4.png)  
+![Screenshot 5](prints/Screenshot_5.png)  
+![Screenshot 6](prints/Screenshot_6.png)  
+![Screenshot 7](prints/Screenshot_7.png)  
+![Screenshot 8](prints/Screenshot_8.png)  
+![Screenshot 9](prints/Screenshot_9.png)  
+![Screenshot 10](prints/Screenshot_10.png)  
+![Screenshot 11](prints/Screenshot_11.png)  
+![Screenshot 12](prints/Screenshot_12.png)  
+![Screenshot 13](prints/Screenshot_13.png)  
+![Screenshot 14](prints/Screenshot_14.png)
 
 
